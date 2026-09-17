@@ -1,0 +1,63 @@
+import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
+
+const root = new URL("../..", import.meta.url).pathname;
+let fail = 0;
+const bad = (msg) => {
+  console.log("FAIL:", msg);
+  fail++;
+};
+
+// 1. opencode.json se parsira + ima $schema
+try {
+  const c = JSON.parse(readFileSync(join(root, "opencode.json"), "utf8"));
+  if (c.$schema !== "https://opencode.ai/config.json") bad("opencode.json: los $schema");
+  else console.log("OK: opencode.json");
+} catch (e) {
+  bad("opencode.json ne se parsira: " + e.message);
+}
+
+// 2. AGENTS.md gi ima pecat-markerite
+const agents = readFileSync(join(root, "AGENTS.md"), "utf8");
+for (const s of ["100% SPREMNO", "Ruling:", "Evidence before synthesis"]) {
+  if (!agents.includes(s)) bad("AGENTS.md: fali " + s);
+}
+console.log("OK: AGENTS.md markeri");
+
+// 3. skills: SKILL.md, name == folder, description 1-1024
+const skillsDir = join(root, ".opencode/skills");
+for (const d of readdirSync(skillsDir)) {
+  const f = join(skillsDir, d, "SKILL.md");
+  if (!existsSync(f)) {
+    bad("skill bez SKILL.md: " + d);
+    continue;
+  }
+  const t = readFileSync(f, "utf8");
+  const m = t.match(/^---\n([\s\S]*?)\n---/);
+  if (!m) {
+    bad("skill bez frontmatter: " + d);
+    continue;
+  }
+  const name = (m[1].match(/^name:\s*(.+)/m) || [])[1];
+  const desc = (m[1].match(/^description:\s*(.+)/m) || [])[1];
+  if (!name || name.trim() !== d) bad(`skill ${d}: name (${name}) != folder`);
+  if (!desc || desc.length < 1 || desc.length > 1024)
+    bad(`skill ${d}: description dolzina nadvor od 1-1024`);
+  console.log("OK: skill " + d);
+}
+
+// 4. agents: description + mode subagent/primary + hidden za *-subagenti
+const agentsDir = join(root, ".opencode/agents");
+for (const f of readdirSync(agentsDir)) {
+  if (!f.endsWith(".md")) continue;
+  const t = readFileSync(join(agentsDir, f), "utf8");
+  const m = t.match(/^---\n([\s\S]*?)\n---/);
+  if (!m || !/^description:/m.test(m[1]) || !/^mode: (subagent|primary|all)/m.test(m[1])) {
+    bad("agent los frontmatter: " + f);
+    continue;
+  }
+  console.log("OK: agent " + f);
+}
+
+console.log(fail === 0 ? "LINT: PASS" : `LINT: ${fail} FAIL`);
+process.exit(fail === 0 ? 0 : 1);

@@ -62,5 +62,9 @@
     }
   },
   "lsp": true,
-  "subagent_depth": 1
+  "subagent_depth": 1,
+  "compaction": {
+    "auto": true,
+    "prune": true
+  }
 }
