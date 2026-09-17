@@ -1,13 +1,13 @@
 import type { Plugin } from "@opencode-ai/plugin"
 
-// PECATNICA guard: tehnicki deny za destruktivno, ne samo tekst.
-// Pravilo 4 od AGENTS.md stanuva kod: stop samo za ovie slucai,
-// se drugo pominuva.
+// PECATNICA guard: technical deny for destructive actions, not just text.
+// Rule 4 of AGENTS.md becomes code: stop only for these cases,
+// everything else passes.
 
 const BLOCKED_BASH: Array<[RegExp, string]> = [
-  [/(^|[;&|]\s*)(sudo\s+)?rm\s+-rf?\s+(\/|~|\*|$)/, "rm -rf na root/home/wildcard"],
+  [/(^|[;&|]\s*)(sudo\s+)?rm\s+-rf?\s+(\/|~|\*|$)/, "rm -rf on root/home/wildcard"],
   [/git\s+push\b.*--force/, "force-push"],
-  [/supabase\s+db\s+(push|reset)\b.*--linked/, "direktna db-push/reset akcija"],
+  [/supabase\s+db\s+(push|reset)\b.*--linked/, "direct db-push/reset action"],
 ];
 
 const BLOCKED_PATH = /(^|\/)\.env(\.|$)|(^|\/)\.env\.|\.pem$|\.key$|id_rsa/i;
@@ -47,7 +47,7 @@ export default (async () => {
           for (const [re, why] of BLOCKED_BASH) {
             if (re.test(cmd)) {
               throw new Error(
-                `PECATNICA guard: blokirano (${why}). Baraj covecka potvrda. Komanda: ${cmd.slice(0, 160)}`,
+                `PECATNICA guard: blocked (${why}). Ask for human confirmation. Command: ${cmd.slice(0, 160)}`,
               );
             }
           }
@@ -60,14 +60,14 @@ export default (async () => {
           for (const p of paths) {
             if (BLOCKED_PATH.test(p)) {
               throw new Error(
-                `PECATNICA guard: blokiran pristap do tajna (${p}). Nikogas tajni vo kontekst.`,
+                `PECATNICA guard: blocked access to a secret (${p}). Never secrets in context.`,
               );
             }
           }
         }
       } catch (err) {
         if (err instanceof Error && err.message.startsWith("PECATNICA guard:")) throw err;
-        // Nikogas ne krsi sesija poradi guard-greska: fail-open za se osven blokiranite.
+        // Never break a session because of a guard error: fail-open for everything unblocked.
       }
     },
   };

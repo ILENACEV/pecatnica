@@ -1,16 +1,16 @@
-# Contributing vo PECATNICA
+# Contributing to PECATNICA
 
-## Flow (pecat-logika i za kontribucii)
-1. Otvori issue PRVO (bug / feature / nov-skill) — bez issue nema PR.
-2. Branch od `main`: `feat/<ime>`, `fix/<ime>`, `skill/<ime>`.
-3. Sekoja promena na skill/agent mora da pomine `node .github/scripts/lint.mjs` lokalno.
-4. Nov skill: `name == folder`, `description` so trigger zborovi
-   ("Use when..."), telo < 500 linii, detali vo `references/`.
-5. Nikogas tajni vo PR: tokeni, klucevi, .env, licni podatoci.
-   CI (gitleaks) pagja namerno ako protece.
-6. PR kon `main` so popolnet template. Merge samo na zelen CI.
+## Flow (stamp logic applies to contributions too)
+1. Open an issue FIRST (bug / feature / new-skill) — no issue, no PR.
+2. Branch from `main`: `feat/<name>`, `fix/<name>`, `skill/<name>`.
+3. Every skill/agent change must pass `node .github/scripts/lint.mjs` locally.
+4. New skill: `name == folder`, `description` with trigger words
+   ("Use when..."), body < 500 lines, details in `references/`.
+5. Never secrets in a PR: tokens, keys, .env, personal data.
+   CI (gitleaks) fails on purpose if one leaks.
+6. PR to `main` with the template filled. Merge only on green CI.
 
-## Zabraneto (CI + reviewer gi fakjaat)
-- try/except:pass, mock za da mine test, brisenje test sto pagja
-- Tvrdnja "popraveno e" bez log (test/build izlez)
-- Refaktor nadvor od taskot
+## Forbidden (CI + reviewer catch these)
+- try/except:pass, mocks to pass a test, deleting a failing test
+- Claiming "fixed" without a log (test/build output)
+- Refactoring outside the task

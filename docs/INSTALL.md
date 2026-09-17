@@ -1,19 +1,19 @@
-# Instalacija
+# Installation
 
-## Vo postojecki proekt (opencode)
-1. Kopiraj `opencode.json`, `AGENTS.md`, `.opencode/` i `research-vault/`
-   (samo `index.md` + `CONTEXT.md`) vo root na proektot.
-2. Proveri: `node .github/scripts/lint.mjs` — mora PASS.
-   (skriptata e vo repo-to; ako ne ja kopiras, preskokni)
-3. Restartiraj ja opencode sesijata — config se cita na start.
-4. Tab na `plan`, kazi sto sakas. Cekaj `100% SPREMNO - mozes na build`.
-5. Tab na `build`, kazi "odi".
+## Into an existing project (opencode)
+1. Copy `opencode.json`, `AGENTS.md`, `.opencode/` and `research-vault/`
+   (`index.md` + `CONTEXT.md` only) into the project root.
+2. Check: `node .github/scripts/lint.mjs` — must PASS.
+   (the script lives in this repo; skip if you do not copy it)
+3. Restart the opencode session — config loads at start.
+4. Tab to `plan`, say what you want. Wait for `100% SPREMNO - mozes na build`.
+5. Tab to `build`, say "go".
 
-## Napomeni
-- `plugin: opencode-plugin-preload-skills` se instalira sam pri start
-  (npm). Bez internet: izbrisi ja linijata `plugin` od opencode.json.
-- `context7` MCP e remote, bez kluc. Bez internet: izbrisi `mcp` blok.
-- `small_model` NE e postaven namerno — dodaj go sam spored provider:
+## Notes
+- `plugin: opencode-plugin-preload-skills` self-installs at start
+  (npm). Offline: delete the `plugin` line from opencode.json.
+- `context7` MCP is remote, no key. Offline: delete the `mcp` block.
+- `small_model` is intentionally NOT set — add it yourself per provider:
   `"small_model": "anthropic/claude-haiku-..."`.
-- `research-vault/products/` i `domains/` se lokalni (gitignore) —
-  vistinskite lekcii nikogas ne se pushaat.
+- `research-vault/products/` and `domains/` are local (gitignore) —
+  real lessons are never pushed.

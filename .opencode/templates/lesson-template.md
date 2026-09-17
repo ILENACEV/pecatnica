@@ -1,11 +1,11 @@
-# L-XXX: <kratok naslov>
+# L-XXX: <short title>
 
-id: L-XXX | datum: YYYY-MM-DD | izvor: products/<ime>
-trigger: koga <uslov vo koj vazi>
-simptom: <1 recenica sto se skrsi>
-koren: <1 recenica zosto>
-pravilo: STO SEKOGAS / NIKOGAS <1 naredba>
-anti-pattern: <1 zabrana>
-reuse-vrska: <koj fajl/test ja dokaza>
-sigurnost: visoka/sredna/niska + rok na vazenje do YYYY-MM-DD
-koristeno vo: (popolnuva vtor product sto citira)
+id: L-XXX | date: YYYY-MM-DD | source: products/<name>
+trigger: when <condition it applies to>
+symptom: <1 sentence what broke>
+root: <1 sentence why>
+rule: ALWAYS / NEVER <1 command>
+anti-pattern: <1 prohibition>
+reuse-link: <which file/test proved it>
+confidence: high/medium/low + valid until YYYY-MM-DD
+used-in: (filled by a second product that cites it)

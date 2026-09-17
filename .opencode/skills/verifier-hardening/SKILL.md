@@ -5,19 +5,19 @@ description: Harden verification with mutation testing and property-based tests.
 
 # Verifier Hardening
 
-Zelen test sto ne fakja bug e lazna doverba. Dva alata:
+A green test that catches no bug is false confidence. Two tools:
 
 ## 1. Mutation testing
-Ubaci namerni greski (mutanti) vo kodot. Test sto ne pagja na mutant
-e slab test. Pravilo: sekoj HIGH-risk blok mora da ubie >= 1 mutant,
-inaku verification = nepotpolneto.
+Inject deliberate faults (mutants) into the code. A test that does not
+fail on a mutant is a weak test. Rule: every HIGH-risk block must kill
+>= 1 mutant, otherwise verification = incomplete.
 
 ## 2. Property-based testing
-Namesto 3 racni primeri: generiraj 100+ (Hypothesis / fast-check /
-proptest). Definiraj invarijanti (`za sekoj X vazi Y`), ne primeri.
-Idealno za: parseri, matematika (EKS!), granici, enkodiranje.
+Instead of 3 handwritten examples: generate 100+ (Hypothesis /
+fast-check / proptest). Define invariants (`for every X holds Y`), not
+examples. Ideal for: parsers, math, boundaries, encoding.
 
 ## Gate
-- HIGH blast-radius + samo primer-based testovi = FAIL.
-- Mutant-prezivean test se poprava ili brise, nikogas "dovolno e".
-- PBT invarijantite se pisuvaat od spec, ne od kod (inaku se tautologija).
+- HIGH blast-radius + only example-based tests = FAIL.
+- A mutant-surviving test gets fixed or deleted, never "good enough".
+- PBT invariants are written from spec, not from code (else tautology).

@@ -1,10 +1,10 @@
 # Security Policy
 
-- Nikogas tajni vo repo: tokeni, klucevi, .env, licni podatoci.
-  CI vrti gitleaks na sekoj push/PR + push protection e uklucen.
-- Najdena tajna: otvori issue (bez da ja paste-iras), rotiraj ja
-  vednas, javi ni.
-- `research-vault/products/` i `domains/` se gitignore-irani namerno.
-- Scope: ova repo e metodologija (markdown/config), nema runtime kod
-  sto izvrsuva nesto kaj korisnikot osven opencode plugin-ovi
-  (guard/ledger - samo cita args, pisuva lokalen log).
+- Never secrets in the repo: tokens, keys, .env, personal data.
+  CI runs gitleaks on every push/PR + push protection is on.
+- Found secret: open an issue (without pasting it), rotate it
+  at once, tell us.
+- `research-vault/products/` and `domains/` are gitignored on purpose.
+- Scope: this repo is methodology (markdown/config), no runtime code
+  that executes anything on the user side except opencode plugins
+  (guard/ledger - only read args, write a local log).

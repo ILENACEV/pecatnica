@@ -5,28 +5,27 @@ description: Model-agnostic verification mechanics for hard decisions. Use when 
 
 # Frontier Verify
 
-## 1. Trace-summary (sekogas pred selekcija)
-Kompresiraj sekoj obid vo `{hipoteza, obid, greska}` - bez terminal-spam.
-Summaries > full trajectories za sporedba. Nikogas ne sporeduvaj
-sirovi trace-ovi.
+## 1. Trace-summary (always before selection)
+Compress every attempt into `{hypothesis, attempt, error}` - no terminal spam.
+Summaries beat full trajectories for comparison. Never compare raw traces.
 
-## 2. RTV select (paralelna selekcija)
-Podeli N summaries vo grupi po 2 (G=2). Za sekoja grupa glasaj 8 pati
-(V=8). Pobednikot odi ponatamu, rekurzivno do 1. Mali grupi > flat
-rangiranje na site odednas.
+## 2. RTV select (parallel selection)
+Split N summaries into groups of 2 (G=2). Vote 8 times per group (V=8).
+The winner advances, recursively down to 1. Small groups beat one flat
+ranking of everything at once.
 
-## 3. PDR refine (sekvencijalna re-upotreba)
-Zemi K=4 najdobri summaries -> pusti svez obid vo cist kontekst
-usloven na niv -> finalen RTV. Ne frlaj ja istorijata, destiliraj ja.
+## 3. PDR refine (sequential reuse)
+Take the K=4 best summaries -> run a fresh attempt in a clean context
+conditioned on them -> final RTV. Never throw history away, distill it.
 
-## 4. Verifier gate (apsolutna porta)
-Niedna promena ne propagira bez sandbox-egzekucija:
-`pass = izlez e prazen AND FAILED/ERROR ne e vo output`.
-Arhitekturata ne e bitna - egzekucijata e se. Critic/evolution/
-hetero-ensemble se zabraneti (dokazano null).
+## 4. Verifier gate (absolute gate)
+No change propagates without sandboxed execution:
+`pass = output is empty AND FAILED/ERROR not in output`.
+Architecture does not matter - execution is everything. Critic/evolution/
+hetero-ensemble are forbidden (proven null).
 
-## 5. Replay-branch (recikliraj, ne frlaj)
-Arhiva na traektorii. Sledna iteracija: 50% explore-from-scratch,
-50% branch na kriticen step od arhiva (redok file-set +
-reasoning-intenziven step). Restore samo so repo-diff, ne replay
-na skapi komandi.
+## 5. Replay-branch (recycle, don't discard)
+Archive of trajectories. Next iteration: 50% explore-from-scratch,
+50% branch at a critical step from the archive (rare file-set +
+reasoning-intense step). Restore via repo-diff only, never replay
+expensive commands.

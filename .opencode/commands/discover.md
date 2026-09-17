@@ -1,11 +1,11 @@
 ---
-description: Najdi vistinski gap-ovi i missing features vo proektot
+description: Find real gaps and missing features in the project
 agent: plan
 ---
 
-Istrazuvaj $ARGUMENTS (oblast ili cel proekt):
-1. Sirina prvo: mapiraj sto postoi (bez da predlagas).
-2. Gap e samo ona sto nedostasuva a e potrebno - ne predlagaj
-   postojecko kako novo (proveri dvapati).
-3. Sekoj gap: dokaz (file:linija ili otsustvo) + zosto e vazen + kolku e golem.
-4. Rangiraj po impact/effort. Bez implementacija, samo lista.
+Research $ARGUMENTS (area or whole project):
+1. Breadth first: map what exists (without proposing).
+2. A gap is only what is missing AND needed - never propose
+   existing things as new (check twice).
+3. Each gap: evidence (file:line or absence) + why it matters + how big.
+4. Rank by impact/effort. No implementation, list only.

@@ -1,11 +1,11 @@
 ---
-description: Kompresiraj ja sesijata vo raboten rezime bez gubenje odluki
+description: Compress the session into a working summary without losing decisions
 ---
 
-Napravi handoff rezime po handoff-skill formatot:
+Make a handoff summary per the handoff-skill format:
 - Context used / Files inspected / Important facts retained
 - Details intentionally skipped / Next minimal action
 - Verification status / Suggested skills
 $ARGUMENTS
-Referenciraj path/URL, ne paste-iraj. Cel, odluki + zosto, otvoreni
-prasanja i tocna posledna korisnicka poraka mora da ostanat.
+Reference path/URL, never paste. Goal, decisions + why, open
+questions and the exact last user message must survive.

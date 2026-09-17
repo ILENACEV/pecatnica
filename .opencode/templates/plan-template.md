@@ -1,43 +1,43 @@
-# Plan: <ime na zadaca>
+# Plan: <task name>
 
-> Sablon v1. Build NE pocnuva bez pecat na dnoto.
+> Template v1. Build NEVER starts without the stamp at the bottom.
 
-## 1. Cel (1 recenica)
+## 1. Goal (1 sentence)
 
-## 1b. Spec (to-spec format, BEZ file paths)
+## 1b. Spec (to-spec format, NO file paths)
 - Problem:
 - Solution:
 - User Stories (`As <actor>, I want <feature>, so that <benefit>`):
-- Testing Decisions (seams, dogovoreni unapred):
+- Testing Decisions (seams, agreed upfront):
 
-## 2. Research (sto naucivme pred plan)
+## 2. Research (what we learned before planning)
 - Web:
 - GitHub:
-- Izvori (URL + datum):
+- Sources (URL + date):
 
-## 3. Reuse (sto nasledivme od vault)
-- `L-XXX`: sto tocno prezemame
-- (Ako nema: "nema prethodna lekcija - prv patent")
+## 3. Reuse (what we inherit from the vault)
+- `L-XXX`: exactly what we adopt
+- (If none: "nema prethodna lekcija - prv patent")
 
-## 4. Arhitektura (2-3 recenici) + Tech stack
+## 4. Architecture (2-3 sentences) + Tech stack
 
-## 5. Global Constraints (tocni vrednosti, verbatim)
+## 5. Global Constraints (exact values, verbatim)
 
-## 6. Taskovi (2-5 min sekoj, so vistinski kod i verifikacija)
-### T1: <naslov>
-- Files: Create / Modify (tocna pateka)
-- Interfaces: Consumes (signaturi) / Produces (iminja+tipovi)
+## 6. Tasks (2-5 min each, with real code and verification)
+### T1: <title>
+- Files: Create / Modify (exact path)
+- Interfaces: Consumes (signatures) / Produces (names+types)
 - Steps:
-  - [ ] Napisi failing test (kod)
-  - [ ] Run -> potvrdi FAIL (log)
-  - [ ] Minimalna implementacija (kod)
-  - [ ] Run -> potvrdi PASS (log)
-- Seams: <javna granica> | `no-seam: <pricina>` za glue
+  - [ ] Write failing test (code)
+  - [ ] Run -> confirm FAIL (log)
+  - [ ] Minimal implementation (code)
+  - [ ] Run -> confirm PASS (log)
+- Seams: <public boundary> | `no-seam: <reason>` for glue
 
-## 7. Out of Scope (sto NAMERNO ne pravime)
+## 7. Out of Scope (what we DELIBERATELY skip)
 
-## 8. Verifikacija (kako ke dokazeme gotovo)
-- Komandi + ocekuvan output
+## 8. Verification (how we prove done)
+- Commands + expected output
 
 ---
 

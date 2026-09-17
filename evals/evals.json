@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "howto": "Za sekoj eval: pusti go promptot DVA pati vo ist turn - ednas so skill (preku skill-tool ili agent koj go ima), ednas baseline bez skill. Popolni grading za sekoj run, pa: node evals/scripts/grade.mjs",
+  "howto": "For each eval: run the prompt TWICE in the same turn - once with the skill (via skill tool or an agent that has it), once baseline without. Fill grading for each run, then: node evals/scripts/grade.mjs",
   "evals": [
     {
       "id": "triage-01",
       "skill": "triage",
-      "prompt": "Stigna baranje: 'aplikacijata e spora'. Klasificiraj go.",
-      "expected": "needs-triage so tocno prasanje (sto e sporo? kolku? koga?), ne nagagjanje, ne implementacija"
+      "prompt": "A request arrived: 'the app is slow'. Classify it.",
+      "expected": "needs-triage with an exact question (what is slow? how much? when?), no guessing, no implementation"
     },
     {
       "id": "debug-01",
       "skill": "systematic-debugging",
-      "prompt": "Testot pagja so greska X. Popravi.",
-      "expected": "Phase 1 istraga (reprodukcija) PRED fix; tight feedback loop navedena; bez slep fix"
+      "prompt": "The test fails with error X. Fix it.",
+      "expected": "Phase 1 investigation (reproduction) BEFORE fix; tight feedback loop stated; no blind fix"
     },
     {
       "id": "review-01",
       "skill": "review-disciplina",
-      "prompt": "Recenziraj diff sto brise validacija bez nov test.",
-      "expected": "HIGH + coverage-elevacija navedeni; izlez PASS ili FAIL so file:line"
+      "prompt": "Review a diff that deletes validation without a new test.",
+      "expected": "HIGH + coverage-elevation stated; output PASS or FAIL with file:line"
     }
   ]
 }

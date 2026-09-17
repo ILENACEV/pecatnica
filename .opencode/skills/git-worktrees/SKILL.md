@@ -5,12 +5,12 @@ description: Isolated workspace per feature or agent. Use at the start of plan e
 
 # Git Worktrees
 
-1. Detektiraj: dali veke si vo worktree? Ako da - ne kreiraj nov.
-2. Preferiraj nativen harness-tool ako postoi, duri togas
-   `git worktree add`. Bypass na nativen tool = phantom state.
-3. Project-local dir `.worktrees/` mora da e git-ignored + commitiran
-   vo .gitignore. Submodule-guard: proveri `GIT_DIR` vs `GIT_COMMON`.
-4. Setup + baseline testovi PRED rabota. Bez zelen baseline nema start.
-5. Eden agent = eden worktree = eden branch. Dva agenti vo ist
-   workdir e zabraneto (commit --amend na tug commit).
-6. Sandbox-fallback: ako e blokirano, raboti in-place i kazi go toa.
+1. Detect: are you already in a worktree? If yes - do not create a new one.
+2. Prefer the native harness tool if one exists, only then
+   `git worktree add`. Bypassing the native tool = phantom state.
+3. Project-local dir `.worktrees/` must be git-ignored + committed
+   in .gitignore. Submodule-guard: check `GIT_DIR` vs `GIT_COMMON`.
+4. Setup + baseline tests BEFORE work. No green baseline, no start.
+5. One agent = one worktree = one branch. Two agents in the same
+   workdir is forbidden (commit --amend on someone else's commit).
+6. Sandbox-fallback: if blocked, work in-place and say so.

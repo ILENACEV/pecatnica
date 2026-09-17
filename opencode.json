@@ -28,7 +28,7 @@
   "agent": {
     "build": {
       "mode": "primary",
-      "description": "Gradi po odobren plan. Orkestrira hidden build-* subagenti, nikogas ne planira od nula.",
+      "description": "Builds from an approved plan. Orchestrates hidden build-* subagents, never plans from scratch.",
       "permission": {
         "task": {
           "*": "deny",
@@ -41,7 +41,7 @@
     },
     "plan": {
       "mode": "primary",
-      "description": "Istrazuva i planira. Nikogas ne pisuva kod. Zavrsuva so plan.md + pecat 100% SPREMNO.",
+      "description": "Researches and plans. Never writes code. Ends with plan.md + stamp 100% SPREMNO.",
       "permission": {
         "edit": "deny",
         "bash": "deny",

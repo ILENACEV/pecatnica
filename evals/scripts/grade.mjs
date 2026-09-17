@@ -1,8 +1,8 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
-// Grader: cita evals/<id>/grading.json ({text, passed, evidence}) i dava
-// pass_rate + delta with-skill vs baseline. Vlezot e racen run, ne avtomatski.
+// Grader: reads evals/<id>/grading.json ({text, passed, evidence}) and reports
+// pass_rate + delta with-skill vs baseline. Input is a manual run, not automatic.
 const dir = new URL("..", import.meta.url).pathname;
 let total = 0,
   passed = 0;
@@ -13,7 +13,7 @@ for (const id of readdirSync(dir)) {
   if (!existsSync(g)) continue;
   const { text, passed: p, evidence } = JSON.parse(readFileSync(g, "utf8"));
   if (typeof p !== "boolean" || typeof text !== "string" || typeof evidence !== "string") {
-    console.log("FAIL: los grading format:", id);
+    console.log("FAIL: bad grading format:", id);
     process.exit(1);
   }
   total++;
@@ -21,5 +21,5 @@ for (const id of readdirSync(dir)) {
   rows.push(`${p ? "PASS" : "FAIL"} ${id} :: ${evidence.slice(0, 120)}`);
 }
 console.log(rows.join("\n"));
-console.log(total === 0 ? "Nema grading.json fajlovi - pusti evals prvo." : `pass_rate: ${passed}/${total}`);
+console.log(total === 0 ? "No grading.json files - run evals first." : `pass_rate: ${passed}/${total}`);
 process.exit(0);

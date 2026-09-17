@@ -1,10 +1,10 @@
 ---
-description: Pameten review - 1 lead skill plus samo potrebni support skills
+description: Smart review - 1 lead skill plus only needed support skills
 agent: build
 ---
 
-Revidiraj $ARGUMENTS (diff, fajl ili oblast):
-1. Triage po rizik (HIGH: auth/crypto/external/validation-removal).
-2. Dve oski: Standards + Spec, sekoja fokusirano, < 400 zborovi po osa.
-3. Bez stilski bukvalnosti. Minor se parkira, ne blokira.
-4. Izlez: PASS ili FAIL lista (file:line + severity + pricina).
+Review $ARGUMENTS (diff, file or area):
+1. Triage by risk (HIGH: auth/crypto/external/validation-removal).
+2. Two axes: Standards + Spec, each focused, < 400 words per axis.
+3. No style literalism. Minors get parked, never block.
+4. Output: PASS or FAIL list (file:line + severity + reason).

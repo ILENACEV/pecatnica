@@ -5,20 +5,20 @@ description: Entry state-machine for incoming work. Use when a new request, bug,
 
 # Triage
 
-## Sostojbi
-`needs-triage` -> `ready-for-agent` | `wontfix`. Nema cetvrta.
+## States
+`needs-triage` -> `ready-for-agent` | `wontfix`. No fourth one.
 
-## Pravila
-1. Sekoj vlez stuff se klasificira PRVO: sto e (bug/feature/prasanje),
-   kolku e golemo (1 fajl / poveke / nepoznato), dali e blokirano od nesto.
-2. `ready-for-agent` bara: jasen opseg + acceptance kriterium + znaen
-   vlez (fajlovi ili oblast). Bez ova: nazad vo `needs-triage` so tocno
-   prasanje, ne nagagjanje.
-3. `wontfix` bara 1-recenica pricina + sto bi go smenilo toa.
-   Nikogas tivko otfrlanje.
-4. Rabota > 1 sesija: mapiraj decision-tiketi (wayfinder) - koj tiket
-   e frontier (preduslovi reseni), koj ceka. Prasanje sto zavisi od
-   drugo otvoreno odi vo sledna runda.
-5. Grill/questionnaire za ona sto ne mozes sam: fakti soberi sam
-   (sub-agent, filesystem), odluki prasaj korisnik. Ne blokiraj -
-   prasaj go ostatokot od frontier sega.
+## Rules
+1. Every incoming item is classified FIRST: what it is (bug/feature/question),
+   how big (1 file / many / unknown), whether it is blocked by anything.
+2. `ready-for-agent` requires: clear scope + acceptance criterion + known
+   input (files or area). Without that: back to `needs-triage` with an exact
+   question, not a guess.
+3. `wontfix` requires a 1-sentence reason + what would change that.
+   Never silently drop.
+4. Work > 1 session: map decision-tickets (wayfinder) - which ticket
+   is frontier (prerequisites resolved), which waits. A question depending
+   on another open one goes to the next round.
+5. Grill/questionnaire for what you cannot decide alone: gather facts alone
+   (sub-agent, filesystem), ask the user for decisions. Do not block -
+   ask the rest of the frontier now.

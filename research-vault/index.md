@@ -1,17 +1,17 @@
 # Research Vault — index
 
-Kumulativna memorija na PECATNICA. Sekoj product ostava trag; sekoj N+1
-product mora citirano da pokaze sto nasledil od N.
+Cumulative memory of PECATNICA. Every product leaves a trace; every N+1
+product must show with citations what it inherited from N.
 
-- `domains/<oblast>/` — L-XXX lekcii po oblast (web-app, auth, SEO...)
-- `products/<ime>/` — brief, research-report, plan.md, DECISIONS.md, lessons
-- Reuse-pravilo: `grep L-XXX plan.md` mora da vrati >= 1,
-  inaku distill se smeta za neuspeshen.
+- `domains/<area>/` — L-XXX lessons per area (web-app, auth, SEO...)
+- `products/<name>/` — brief, research-report, plan.md, DECISIONS.md, lessons
+- Reuse rule: `grep L-XXX plan.md` must return >= 1,
+  otherwise the distill counts as failed.
 
-## Lekcii
+## Lessons
 
-(nema lekcii - prv patent doprva se gradi)
+(no lessons - first patent is still being built)
 
-## Produkti
+## Products
 
-(nema produkti)
+(no products)

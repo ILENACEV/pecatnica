@@ -5,22 +5,22 @@ description: Machine gate between plan and build rooms. Use before leaving plan 
 
 # Pecat Gate
 
-Portata e kod, ne dogovor.
+The gate is code, not agreement.
 
-## Koga
-1. Kraj na plan-soba: plan-agentot ja pusta proverkata vrz svojata plan.md.
-2. Start na build-soba: build-agentot ja pusta proverkata PRED da procita
-   bilo koj task. Bez PASS nema citanje.
+## When
+1. End of plan-room: the plan agent runs the check on its own plan.md.
+2. Start of build-room: the build agent runs the check BEFORE reading
+   any task. No PASS, no reading.
 
-## Kako
+## How
 `node .opencode/scripts/pecat-check.mjs <plan.md>`
 
-## Pravila
-- `PASS` = pecat vazi, mozes na build. Samo togas.
-- `FAIL` = vrati se vo plan-soba so tocnata pricina (fali sekcija /
-  nema pecat / nema reuse-dokaz). Ne krsi, ne zaobikoluvaj, ne
-  "popravi racno" - plan-soba ja poprava plan.md, pa re-check.
-- Pecatot e tocen string `100% SPREMNO - mozes na build`.
-  Parafrazi ("spremno e", "moze build") NE vazat.
-- Reuse: ili `L-XXX` citat (sto tocno se prezema) ili eksplicitno
-  `nema prethodna lekcija - prv patent`. Treta opcija ne postoi.
+## Rules
+- `PASS` = stamp valid, you may build. Only then.
+- `FAIL` = back to the plan-room with the exact reason (missing section /
+  no stamp / no reuse-evidence). Do not break, do not bypass, do not
+  "fix by hand" - the plan-room fixes plan.md, then re-check.
+- The stamp is the exact string `100% SPREMNO - mozes na build`.
+  Paraphrases ("it is ready", "build may start") do NOT count.
+- Reuse: either an `L-XXX` citation (exactly what is adopted) or explicit
+  `nema prethodna lekcija - prv patent`. There is no third option.

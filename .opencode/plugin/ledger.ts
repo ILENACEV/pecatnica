@@ -1,8 +1,8 @@
 import type { Plugin } from "@opencode-ai/plugin"
 
-// PECATNICA ledger: pravilo "Ledger: pred akcija 1 linija, po alatka
-// 1 linija" stanuva fajl-dokaz vo .guardian/operations.log.
-// Fail-open: greska vo ledger nikogas ne ja krsi sesijata.
+// PECATNICA ledger: the rule "Ledger: 1 line before an action, 1 line
+// after each tool" becomes file evidence in .guardian/operations.log.
+// Fail-open: a ledger error never breaks the session.
 
 export default (async () => {
   const append = async (line: string) => {
@@ -16,7 +16,7 @@ export default (async () => {
         `${new Date().toISOString()} ${line}\n`,
       );
     } catch {
-      // namerno tivko
+      // deliberately silent
     }
   };
 

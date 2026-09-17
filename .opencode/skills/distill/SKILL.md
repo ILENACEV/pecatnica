@@ -5,18 +5,18 @@ description: Distill a finished build into a reusable vault lesson. Use after ev
 
 # Distill
 
-## Pravila
-1. Edna lekcija = eden L-XXX fajl po sablon
-   (`.opencode/templates/lesson-template.md`). Ne grupiraj.
-2. Instrukcija za idnina, ne recap na minato. Sekoja lekcija mora
-   da ima STO SEKOGAS / NIKOGAS naredba.
-3. Bez dokaz (file:linija, test, URL) = ne vleguva vo vault.
-4. Posle zapis: apdejtiraj `research-vault/index.md`
-   (lekcija + `koristeno vo` koga vtor product ke ja citira).
-5. Reuse-test: `grep L-XXX plan.md` na sledniot product mora >= 1.
-   Bez citat, distill se smeta za neuspeshen.
+## Rules
+1. One lesson = one L-XXX file per template
+   (`.opencode/templates/lesson-template.md`). Never group.
+2. Instruction for the future, not a recap of the past. Every lesson must
+   carry an ALWAYS / NEVER command.
+3. No evidence (file:line, test, URL) = does not enter the vault.
+4. After writing: update `research-vault/index.md`
+   (lesson + `used-in` when a second product cites it).
+5. Reuse test: `grep L-XXX plan.md` on the next product must return >= 1.
+   Without a citation, the distill counts as failed.
 
-## Format na fajl
-`research-vault/domains/<oblast>/L-XXX.md` po sablon. Sigurnost:
-visoka/sredna/niska + rok na vazenje. Zastarenite se brisat na
-nedelen prune, ne se cuvaat "za sekoj slucaj".
+## File format
+`research-vault/domains/<area>/L-XXX.md` per template. Confidence:
+high/medium/low + expiry date. Outdated lessons are deleted on the
+weekly prune, never kept "just in case".

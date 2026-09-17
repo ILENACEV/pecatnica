@@ -1,15 +1,14 @@
 # CONTEXT.md — ubiquitous language
 
-Glosar: Term + definicija + Avoid. Bez implementaciski detali.
-Sekoja soba go cita za iminja; sekoj nov termin se vrakja ovde vednas.
+Glossary: Term + definition + Avoid. No implementation details.
+Every room reads it for naming; every new term goes back here at once.
+Adapt the domain rows to your project; keep the room rows.
 
-| Term | Definicija | Avoid |
+| Term | Definition | Avoid |
 |---|---|---|
-| EKS | Efektivna kamatna stapka, IRR na diskontirani paricni tekovi | "kamata", nominalna stapka |
-| DSTI | Debt-service-to-income: udeo na rata vo prihod | DTI bez definicija |
-| ledger | Unificirana evidencija na transakcii (17 kategorii) | expenses (legacy, 6 kat.) |
-| Bank-Ready dosie | A4 izvestaj: prihod, DSTI, stres-matrica, red flags | "izvestaj" bez preciznost |
-| plan-soba | Istrazuva + planira, NE pisuva kod, kraj so pecat | "plan agent" genericki |
-| build-soba | Gradi po plan.md so pecat, NE planira od nula | "build agent" genericki |
-| pecat |Tocna recenica `100% SPREMNO - mozes na build` vo plan.md | usmen dogovor |
-| L-XXX | Lekcija vo vault so trigger/pravilo/dokaz | "naucivme deka..." bez format |
+| plan-room | Researches + plans, NEVER writes code, ends with stamp | generic "plan agent" |
+| build-room | Builds from stamped plan.md, NEVER plans from scratch | generic "build agent" |
+| stamp | Exact sentence `100% SPREMNO - mozes na build` in plan.md | verbal agreement |
+| L-XXX | Vault lesson with trigger/rule/evidence | "we learned that..." with no format |
+| ledger | Unified record of actions/decisions with evidence links | chat-only history |
+| red-green | Failing test first, then minimal code, then pass | code before test |

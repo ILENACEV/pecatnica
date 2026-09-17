@@ -1,12 +1,12 @@
 ---
-description: Zavrsi granka po zeleni testovi - meni merge/PR/keep
+description: Finish a branch after green tests - merge/PR/keep menu
 agent: build
 ---
 
-Test-suite e zelena (proveri svezho). Detektiraj base-branch (ne pretpostavuvaj main).
-Prikazi meni i cekaj broj:
-1. Merge lokalno (checkout base + pull + merge + test na rezultat)
+The test-suite is green (verify fresh). Detect base-branch (never assume main).
+Show the menu and wait for a number:
+1. Merge locally (checkout base + pull + merge + test the result)
 2. Push + PR
 3. Keep as-is
 $ARGUMENTS
-Discard samo na eksplicitno `discard`. Nikogas --force, nikogas auto-merge.
+Discard only on explicit `discard`. Never --force, never auto-merge.

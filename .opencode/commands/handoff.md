@@ -1,9 +1,9 @@
 ---
-description: Spakuvaj ja sesijata za sledna sesija ili druga soba
+description: Pack the session for the next session or the other room
 ---
 
-Spakuvaj transfer za: $ARGUMENTS
-1. Format po handoff-skill: cel, sostojba (git status), izmeneti fajlovi,
-   fakti, komandi, test-rezultati, next steps, warnings, suggested skills.
-2. Ne dupliraj spec/plan/ADR/diff - samo path/URL.
-3. Redact secrets/PII. Ednash, kompaktno, da stoi samo.
+Pack a transfer for: $ARGUMENTS
+1. Format per handoff-skill: goal, state (git status), changed files,
+   facts, commands, test results, next steps, warnings, suggested skills.
+2. Never duplicate spec/plan/ADR/diff - path/URL only.
+3. Redact secrets/PII. Once, compact, self-standing.

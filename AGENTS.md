@@ -1,40 +1,40 @@
 <!-- BEGIN:pecatnica-operating-rules -->
-# PECATNICA — dve sobi, nula izbor za korisnikot
+# PECATNICA — two rooms, zero choice for the user
 
-Ti ima samo dve kopcinja: `plan` i `build` (Tab za smena). Subagentite se
-hidden i se budat sami po description-match. Nikogas ne gi vikas po ime.
+You have only two buttons: `plan` and `build` (Tab to switch). Subagents are
+hidden and wake up on their own via description-match. Never invoke them by name.
 
-## Soba 1 — plan (istrazuva + planira, NE pisuva kod)
-Redosledot e fiksen: clarify -> rewrite -> sirina (siroki queries) ->
-dlabocina -> revise (sto fali? sto e kontradiktorno?) -> challenge
-(3 najslabi tocki + prasanja do korisnikot) -> `plan.md` -> STOP.
-Kraj samo so tocna recenica: `100% SPREMNO - mozes na build`.
-Bez pecat nema build. Plan ne smee da povika `build-*` (tehnicki deny).
+## Room 1 — plan (researches + plans, NEVER writes code)
+Fixed order: clarify -> rewrite -> breadth (broad queries) ->
+depth -> revise (what is missing? what is contradictory?) -> challenge
+(3 weakest points + questions to the user) -> `plan.md` -> STOP.
+End only with the exact sentence: `100% SPREMNO - mozes na build`.
+No stamp, no build. Plan must never invoke `build-*` (technical deny).
 
-## Soba 2 — build (gradi po plan, NE planira od nula)
-Start samo so `plan.md` so pecat. Bez pecat: vrati go korisnikot vo plan.
-Po task: explorer (cita) -> executor (1 task, TDD RED-GREEN) ->
-reviewer (samo PASS/FAIL, edit deny). FAIL = nazad na executor,
-max 5 rundi (1-3 ist, 4-5 svez). Na kraj: svez test/log, exit 0, inaku
-ne e gotovo. Nikogas auto-merge na main.
+## Room 2 — build (builds from plan, NEVER plans from scratch)
+Starts only with a stamped `plan.md`. No stamp: send the user back to plan.
+Per task: explorer (reads) -> executor (1 task, TDD RED-GREEN) ->
+reviewer (PASS/FAIL only, edit deny). FAIL = back to executor,
+max 5 rounds (1-3 same, 4-5 fresh). At the end: fresh test/log, exit 0,
+otherwise it is not done. Never auto-merge to main.
 
-## Tvrdi pravila (vazat sekogas, nad se)
-1. Evidence before synthesis: niedna tvrdnja bez `file:linija`, URL ili log.
-2. Nikogas "popraveno e" bez: reprodukcija-test pred fix + PASS po fix.
-3. Minimalen diff: ne refaktoriraj nesto sto ne e vo taskot.
-4. Stop samo za: destruktivno/ireverzibilno, security-sensitive,
-   side-effect nadvor od worktree (push/merge/publish), plan skrshen.
-   Se drugo: `Ruling: sto odluciv -- zosto -- sto cini ako gresam` i teraj.
-5. Istorijata e append-only. Kompaktiraj podocna, ne rano.
+## Hard rules (always apply, above everything)
+1. Evidence before synthesis: no claim without `file:line`, URL or log.
+2. Never "it is fixed" without: reproduction test before fix + PASS after fix.
+3. Minimal diff: never refactor anything outside the task.
+4. Stop only for: destructive/irreversible, security-sensitive,
+   side effects outside the worktree (push/merge/publish), broken plan.
+   Everything else: `Ruling: what I decided -- why -- what it costs if wrong`, then go.
+5. History is append-only. Compact late, not early.
 
-## Fable-odnesuvanje (vazi za sekoja soba i sekoj subagent)
-- Ledger: pred akcija 1 linija plan; po alatka 1 linija najdeno + 1 sledno.
-- No-shortcut: zabraneti try/except:pass, mock za da mine test, brisenje
-  test sto pagja. Bug: 5x Zosto + dokaz pred fix; fix mora da objasni
-  100% od simptomite.
-- Effort: HIGH za plan/istraga/nepoznato, LOW za rutina. Sekoja akcija
-  nosi `EFFORT=low/high + zosto`.
-- Batch: prvo lista zavisnosti, pa site nezavisni citanja vo eden odgovor.
-- Nikogas "ke napravam" bez alat. Ili alat, ili gotovo.
-- Ako e blokirano 1 od 5: zavrsi gi drugite 4 + tocno sto fali.
+## Fable conduct (applies to every room and every subagent)
+- Ledger: before an action 1 line of plan; after each tool 1 line found + 1 next.
+- No-shortcut: forbidden try/except:pass, mocks to pass a test, deleting
+  a failing test. Bug: 5x Why + evidence before fix; the fix must explain
+  100% of the symptoms.
+- Effort: HIGH for plan/research/unknown, LOW for routine. Every action
+  carries `EFFORT=low/high + why`.
+- Batch: list dependencies first, then all independent reads in one response.
+- Never "I will do" without a tool. Either a tool, or done.
+- If 1 of 5 is blocked: finish the other 4 + exactly what is missing.
 <!-- END:pecatnica-operating-rules -->

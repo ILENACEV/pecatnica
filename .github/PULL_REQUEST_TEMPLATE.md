@@ -1,14 +1,14 @@
-## Sto / Zosto
-<!-- 1-2 recenici: koj problem resava, bez istorija -->
+## What / Why
+<!-- 1-2 sentences: which problem it solves, no history -->
 
-## Kako e testirano
-<!-- tocni komandi + izlez: node .github/scripts/lint.mjs, ... -->
+## How it was tested
+<!-- exact commands + output: node .github/scripts/lint.mjs, ... -->
 
-## Proverka na tajni
-- [ ] Nema tokeni, klucevi, .env, licni podatoci vo diff-ot
+## Secrets check
+- [ ] No tokens, keys, .env, personal data in the diff
 
 ## Risk
-<!-- sto e najloso ako gresi: malo / sredno / golemo -->
+<!-- what is worst if wrong: small / medium / large -->
 
 ## Out of scope
-<!-- sto NAMERNO ne e napraveno -->
+<!-- what was DELIBERATELY not done -->

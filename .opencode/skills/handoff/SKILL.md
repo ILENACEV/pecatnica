@@ -5,26 +5,26 @@ description: Compress session context and hand off between rooms or sessions. Us
 
 # Handoff
 
-## Budget gate (pred sekoj plan)
-Izmeri kontekst: ako planot + relevantni fajlovi > 50% od prozorecot,
-prvo pusti hidden subagent samo za repo-map, ne citaj se odma.
-Poedinechen fajl > 5k tokeni ne se cita cel - grep + prvite 30 linii.
+## Budget gate (before every plan)
+Measure context: if plan + relevant files > 50% of the window,
+first launch a hidden subagent for repo-map only, never read everything.
+A single file > 5k tokens is never read whole - grep + first 30 lines.
 
-## Kompresija (sto se cuva, sto se frla)
-Cuvaj verbatim: greski, `file:linija`, komandi, API/shemi, migracii,
-cel, ogranicuvanja, odluki + zosto, verifikacii, otvoreni prasanja.
-Frli: verbose tool output, mrtvi obidi, parafrazirani greski.
+## Compression (what stays, what goes)
+Keep verbatim: errors, `file:line`, commands, API/schemas, migrations,
+goal, constraints, decisions + why, verifications, open questions.
+Drop: verbose tool output, dead attempts, paraphrased errors.
 
-## Izlez (fiksen format, sekogas)
+## Output (fixed format, always)
 - Context used / Files inspected / Important facts retained
 - Details intentionally skipped / Next minimal action
 - Verification status
-- Suggested skills (koi Skill tool da gi vika sledniot agent)
+- Suggested skills (which skills the next agent should invoke)
 
-## Pravila
-- Referenciraj path/URL, ne paste-iraj sodrzina. Ne dupliraj
-  spec/plan/ADR/diff - samo path.
-- Handoffot zivee nadvor od workspace state (temp-dir princip):
-  cel, sostojba (`git status`), izmeneti fajlovi, tocna posledna
-  korisnicka poraka, otfrleni pristapi (da ne se istrazuvaat povtorno).
-- Redact secrets/PII sekade.
+## Rules
+- Reference path/URL, never paste content. Never duplicate
+  spec/plan/ADR/diff - path only.
+- The handoff lives outside workspace state (temp-dir principle):
+  goal, state (`git status`), changed files, exact last user message,
+  rejected approaches (so they are not re-explored).
+- Redact secrets/PII everywhere.
