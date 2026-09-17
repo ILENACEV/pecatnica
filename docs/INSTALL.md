@@ -4,7 +4,7 @@
 1. Kopiraj `opencode.json`, `AGENTS.md`, `.opencode/` i `research-vault/`
    (samo `index.md` + `CONTEXT.md`) vo root na proektot.
 2. Proveri: `node .github/scripts/lint.mjs` — mora PASS.
-   (skriptata e vo repo-то; ako ne ja kopiras, preskokni)
+   (skriptata e vo repo-to; ako ne ja kopiras, preskokni)
 3. Restartiraj ja opencode sesijata — config se cita na start.
 4. Tab na `plan`, kazi sto sakas. Cekaj `100% SPREMNO - mozes na build`.
 5. Tab na `build`, kazi "odi".

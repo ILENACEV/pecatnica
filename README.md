@@ -29,7 +29,8 @@ challenge -> plan.md             reviewer (PASS/FAIL) ->
 opencode.json          # task-vrzuvanje, permissions, MCP, LSP
 AGENTS.md              # operativni pravila (sekogas vcita)
 .opencode/agents/      # 6 hidden: plan-researcher/scout/challenger, build-explorer/executor/reviewer
-.opencode/skills/      # verify/distill/handoff + debugging/review/triage/worktree paket
+.opencode/skills/      # verify/distill/handoff + debugging/review/triage/worktree paket + pecat-gate
+.opencode/scripts/     # pecat-check.mjs - masinska proverka na plan.md (PASS/FAIL)
 .opencode/commands/    # /finish /safe-apply /discover /smart-review /compress-context /handoff
 .opencode/plugin/      # guard (tehnicki deny) + ledger (operations.log dokaz)
 .opencode/templates/   # plan-template.md, lesson-template.md

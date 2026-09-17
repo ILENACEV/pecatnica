@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.5 — Masinski pecat (nase svoe)
+- `pecat-check.mjs`: plan.md proverka (sekcii + tocen pecat + reuse-test)
+- `pecat-gate` skill: PASS otvora build, FAIL vraka vo plan
+- lint prosiren: sablonot mora da gi ima gate-markerite
+
 ## v0.3 — Bran B
 - 7 skills: systematic-debugging, verifier-hardening, review-disciplina,
   writing-skills, finishing-branch, git-worktrees, triage

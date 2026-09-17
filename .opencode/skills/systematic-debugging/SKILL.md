@@ -20,6 +20,6 @@ NEMA fix bez Phase 1 istraga. Fix na izvor, ne na simptom.
 - Tight feedback loop e gate: bez red-capable komanda (failing test,
   curl, CLI fixture) nema Phase 2 - ne hipotetiziraj.
 - 1 promenliva odednas. Sekoj log tagiran `[DEBUG-xxxx]`, izbrisi gi na kraj.
-- 3 failirani fixa -> STOP, prasaј arhitektura. Nikogas 4-ti ist fix.
+- 3 failirani fixa -> STOP, prasaj arhitektura. Nikogas 4-ti ist fix.
 - Regression test PRED fix. Cleanup checklist: repro zelen, DEBUG izbrisan,
   hipoteza vo commit message. Redact secrets `<REDACTED>`.

@@ -16,7 +16,7 @@
 - Izvori (URL + datum):
 
 ## 3. Reuse (sto nasledivme od vault)
-- `L-XXX`: sto tocno prezemaме
+- `L-XXX`: sto tocno prezemame
 - (Ako nema: "nema prethodna lekcija - prv patent")
 
 ## 4. Arhitektura (2-3 recenici) + Tech stack

@@ -24,6 +24,15 @@ for (const s of ["100% SPREMNO", "Ruling:", "Evidence before synthesis"]) {
 }
 console.log("OK: AGENTS.md markeri");
 
+// 2b. plan-template gi ima gate-markerite + pecat-check postoi
+const tpl = readFileSync(join(root, ".opencode/templates/plan-template.md"), "utf8");
+for (const s of ["100% SPREMNO - mozes na build", "## 7. ", "## 8. ", "### T1", "Reuse"]) {
+  if (!tpl.includes(s)) bad("plan-template: fali " + s);
+}
+if (!existsSync(join(root, ".opencode/scripts/pecat-check.mjs")))
+  bad("fali .opencode/scripts/pecat-check.mjs");
+console.log("OK: plan-template + pecat-check");
+
 // 3. skills: SKILL.md, name == folder, description 1-1024
 const skillsDir = join(root, ".opencode/skills");
 for (const d of readdirSync(skillsDir)) {

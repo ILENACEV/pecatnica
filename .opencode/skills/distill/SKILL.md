@@ -12,7 +12,7 @@ description: Distill a finished build into a reusable vault lesson. Use after ev
    da ima STO SEKOGAS / NIKOGAS naredba.
 3. Bez dokaz (file:linija, test, URL) = ne vleguva vo vault.
 4. Posle zapis: apdejtiraj `research-vault/index.md`
-   (lekcija + `koristeno vo` koga втор product ke ja citira).
+   (lekcija + `koristeno vo` koga vtor product ke ja citira).
 5. Reuse-test: `grep L-XXX plan.md` na sledniot product mora >= 1.
    Bez citat, distill se smeta za neuspeshen.
 

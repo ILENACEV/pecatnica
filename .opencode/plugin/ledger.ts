@@ -16,7 +16,7 @@ export default (async () => {
         `${new Date().toISOString()} ${line}\n`,
       );
     } catch {
-      // namerno тивко
+      // namerno tivko
     }
   };
 

@@ -10,7 +10,7 @@
    CI (gitleaks) pagja namerno ako protece.
 6. PR kon `main` so popolnet template. Merge samo na zelen CI.
 
-## Zabraneto (CI + reviewer gi фаќаат)
+## Zabraneto (CI + reviewer gi fakjaat)
 - try/except:pass, mock za da mine test, brisenje test sto pagja
 - Tvrdnja "popraveno e" bez log (test/build izlez)
 - Refaktor nadvor od taskot

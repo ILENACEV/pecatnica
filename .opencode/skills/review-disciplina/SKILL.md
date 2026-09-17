@@ -15,7 +15,7 @@ description: Discipline for giving and receiving code review. Use after every ta
 ## Primanje review (koga feedback stigne)
 - Verify-before-implement: proveri ja zabeleskata vo kod pred da ja primenis.
 - Bez "great point!" + slep apply. Ako reviewerot gresi: vrati so
-  tehnicko obrazlozenie + dokaz, ne ignoriraj тивко.
+  tehnicko obrazlozenie + dokaz, ne ignoriraj tivko.
 - Critical = fix vednas. Important = pred prodolzuvanje. Minor = parkiraj
   vo lista, nikogas vo fix-loop.
 - Second-opinion za HIGH-risk: uste eden nezavisen reviewer (drug model
@@ -23,4 +23,4 @@ description: Discipline for giving and receiving code review. Use after every ta
 
 ## Spec-to-code compliance
 Posle patch: dali sekoja tocka od spec e pokriena? Missing/partial/scope-creep
-so citat od spec. Izgleda-implementirano-ama-pogresno se фаќа samo vaka.
+so citat od spec. Izgleda-implementirano-ama-pogresno se fakja samo vaka.

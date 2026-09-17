@@ -5,7 +5,7 @@ description: Harden verification with mutation testing and property-based tests.
 
 # Verifier Hardening
 
-Zelen test sto ne фаќа bug e lazна doverba. Dva alata:
+Zelen test sto ne fakja bug e lazna doverba. Dva alata:
 
 ## 1. Mutation testing
 Ubaci namerni greski (mutanti) vo kodot. Test sto ne pagja na mutant
