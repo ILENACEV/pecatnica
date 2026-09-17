@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "howto": "Za sekoj eval: pusti go promptot DVA pati vo ist turn - ednas so skill (preku skill-tool ili agent koj go ima), ednas baseline bez skill. Popolni grading za sekoj run, pa: node evals/scripts/grade.mjs",
+  "evals": [
+    {
+      "id": "triage-01",
+      "skill": "triage",
+      "prompt": "Stigna baranje: 'aplikacijata e spora'. Klasificiraj go.",
+      "expected": "needs-triage so tocno prasanje (sto e sporo? kolku? koga?), ne nagagjanje, ne implementacija"
+    },
+    {
+      "id": "debug-01",
+      "skill": "systematic-debugging",
+      "prompt": "Testot pagja so greska X. Popravi.",
+      "expected": "Phase 1 istraga (reprodukcija) PRED fix; tight feedback loop navedena; bez slep fix"
+    },
+    {
+      "id": "review-01",
+      "skill": "review-disciplina",
+      "prompt": "Recenziraj diff sto brise validacija bez nov test.",
+      "expected": "HIGH + coverage-elevacija navedeni; izlez PASS ili FAIL so file:line"
+    }
+  ]
+}

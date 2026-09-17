@@ -1,5 +1,8 @@
 # PECATNICA — dve sobi, nula izbor za korisnikot
 
+[![ci](https://github.com/ILENACEV/pecatnica/actions/workflows/ci.yml/badge.svg)](https://github.com/ILENACEV/pecatnica/actions/workflows/ci.yml)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Research-first builder za AI coding agenti (opencode).
 Dve primarni sobi — `plan` i `build` — plus hidden subagenti koi se budat
 sami. Korisnikot nikogas ne bira subagent. Sekoj product ostava trag vo

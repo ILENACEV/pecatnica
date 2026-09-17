@@ -63,6 +63,7 @@
   },
   "lsp": true,
   "subagent_depth": 1,
+  "plugin": ["opencode-plugin-preload-skills"],
   "compaction": {
     "auto": true,
     "prune": true

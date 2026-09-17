@@ -1,0 +1,21 @@
+{
+  "agentSkills": {
+    "plan": ["triage", "frontier-verify", "handoff", "distill"],
+    "build": [
+      "systematic-debugging",
+      "verifier-hardening",
+      "review-disciplina",
+      "finishing-branch",
+      "git-worktrees",
+      "frontier-verify",
+      "handoff",
+      "distill"
+    ]
+  },
+  "conditionalSkills": [
+    { "skill": "writing-skills", "if": { "fileExists": ".opencode/skills/*/SKILL.md" } }
+  ],
+  "maxTokens": 8000,
+  "useSummaries": true,
+  "persistAfterCompaction": true
+}
