@@ -1,0 +1,11 @@
+# Tajni i privatno - nikogas na git
+.env*
+*.pem
+*.key
+
+# Lokalna memorija - vistinskite lekcii ostanuvaat na tvoja masina
+research-vault/products/
+research-vault/domains/
+
+# OS / editor
+.DS_Store

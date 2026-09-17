@@ -1,0 +1,66 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "edit": "allow",
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "ls*": "allow",
+      "git push*": "deny",
+      "rm *": "deny",
+      "supabase db push*": "ask"
+    },
+    "task": "allow",
+    "skill": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "external_directory": "ask"
+  },
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "description": "Gradi po odobren plan. Orkestrira hidden build-* subagenti, nikogas ne planira od nula.",
+      "permission": {
+        "task": {
+          "*": "deny",
+          "build-*": "allow",
+          "explore": "allow",
+          "scout": "allow",
+          "general": "ask"
+        }
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "description": "Istrazuva i planira. Nikogas ne pisuva kod. Zavrsuva so plan.md + pecat 100% SPREMNO.",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny",
+        "task": {
+          "*": "deny",
+          "plan-*": "allow",
+          "explore": "allow",
+          "scout": "allow",
+          "general": "deny"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  },
+  "lsp": true,
+  "subagent_depth": 1
+}
